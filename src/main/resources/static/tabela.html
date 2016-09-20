@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="UTF-8">
+		<title>Tabelas</title>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style>
+			p, ul {
+				padding-bottom : 10px;
+			}
+			
+			.red {
+				color : #ac2435;
+			}
+			
+			.conteudo {
+				padding-top: 20px;
+			}
+			
+			.sidenav {
+				background : #E6E6FA;
+				padding-top : 10px;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+	
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">Guia de Acessibilidade</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+				  <ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Inicio</a></li>
+					<li><a href="#">Sobre</a></li>
+					<li><a href="#">Contacto</a></li>
+				  </ul>
+				  <ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				  </ul>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container-fluid">
+			<div class="row content">
+				<div class="col-md-1 sidenav">
+					<p><a href="tabela.html">Tabela</a></p>
+					<p><a href="imagens.html">Imagens</a></p>
+					<p><a href="formularios.html">Formulários</a></p>
+					<p><a href="#">Cores</a></p>
+					<p><a href="#">Link</a></p>
+					<p><a href="#">Link</a></p>
+					<p><a href="#">Link</a></p>
+					<p><a href="#">Link</a></p>
+					<p><a href="#">Link</a></p>
+					<p><a href="#">Link</a></p>
+					<p><a href="#">Link</a></p>
+					<p><a href="#">Link</a></p>					
+				</div>	
+			
+				<!-- Começo -->
+			
+				<div class="col-md-11">
+				
+					<h2>Tabelas</h2>
+					<div>
+						<i><a href="https://docs.google.com/document/d/1iTsMgqYPtBEbAyW7QiPNSi4upVkYH1UYA1AWnzQhRfQ/edit?usp=sharing" target="_blank">Resumo</a></i>
+						|
+						<i><a href="http://www.maujor.com/tutorial/actables.php" target="_blank">Fonte</a></i>
+					</div>	
+					
+					<div>
+						
+						<h3>Leitores de tela e as tabelas</h3>
+						<p> Ao contrário do que o nome possa sugerir, a maioria dos leitores de tela na verdade não lê a tela. Hoje em dia, as tecnologias em uso corrente lê a 
+						sequência do código fonte da página e não o conteúdo da tela. <p>
+						
+						<h3>Identificação</h3>
+						<p>Quando você encontra uma tabela em uma página Web, normalmente existe um título ou um rótulo que a identifica. 
+						HTML fornece duas tags para orientar os usuários de leitores de tela e incrementar a acessibilidade aos dados da tabela: <p>
+						
+						<h4><strong>&lt;CAPTION&gt;</strong> para o título da tabela</h4>
+						<p>Por padrão o conteúdo de 'caption' (título da tabela) é renderizado logo acima da tabela e centrado</p>
+						
+						<h4><strong>summary</strong> para a finalidade da tabela</h4>
+						<p>O conteúdo de summary não é renderizado na tela de navegadores gráficos mas serve como dado auxiliar para entendimento da tabela para usuários de leitores de tela e displays Braille.
+							summary deve ser usado para descrever a finalidade primária da tabela e dar uma indicação da sua estrutura geral. A maioria das tecnologias assistivas lê o conteúdo de summary fornecendo logo no início da tabela uma informação que ajudará o usuário a interpretar a tabela. Para tabelas mais complexas o uso de summary é de muita importância.
+						</p>
+						
+						<h3>Cabeçalhos de linhas com <strong>&lt;th&gt;</strong></h3>
+						<p>O elemento <strong>&lt;th&gt;</strong> deverá sempre ser usado para marcar cabeçalhos de linhas e de colunas em uma tabela de dados</p>
+						
+						<h3><strong>&lt;thead&gt;</strong>, <strong>&lt;tbody&gt;</strong> e <strong>&lt;tfoot&gt;</strong></h3>
+						<p>Para tabelas simples, o uso apropriado do elemento &lt;th&gt; é essencial para tornar a tabela acessível. Contudo com um pouco mais de esforço, podemos incrementar a acessibilidade aos dados da tabela.
+							HTML fornece elementos que nos permitem agrupar as linhas de uma tabela em três seções distintas;
+						</p>
+						<ul>
+							<li>&lt;thead&gt; para os cabeçalhos da tabela,</li>
+							<li>&lt;tfoot&gt; para o rodapé da tabela,</li>
+							<li>&lt;tbody&gt; para o corpo da tabela.</li>
+						</ul>
+						
+						<h3>Evite o uso de colunas com células vazias</h3>
+						<p>Em alguns casos os desenvolvedores usam colunas vazias em cabeçalhos ou dados, para obter um espaçamento entre as colunas de uma tabela.
+							JAWS, por exemplo lê "blank" toda vez que encontra uma célula vazia e isto pode reduzir a usabilidade e a acessibilidade das tabelas de dados para usuários com leitores de tela.
+							CSS deve ser usado no lugar de células vazias para fins de controlar a apresentação de uma tabela de dados.
+						</p>	
+
+						
+					</div>
+					
+					<div class="row conteudo">
+						<div class="col-md-6">
+							
+							<table class="table" summary="Tabela com os preços em reais de ameixa preta e pera d'água  com um nível de cabeçalho de linha e um nível de cabeçalho de coluna">
+
+									<caption>
+										Preços em reais de ameixa e pera em Campinas 
+									</caption>
+
+									<thead>
+										<tr>
+											<td></td>
+											<th>Ameixa preta</th>
+											<th>Pera d'água</th>
+										</tr>
+									</thead>
+									
+									<tfoot>
+										
+										<tr>
+											<td></td>
+											<th>Ameixa preta</th>
+											<th>Pera d'água</th>
+										</tr>
+										
+									</tfoot>
+
+									<tbody>
+										<tr>
+											<th>Atacado</th>
+											<td>1,00</td>
+											<td>1,50</td>
+										</tr>
+										<tr>
+											<th>Varejo</th>
+											<td>2,00</td>
+											<td>2,50</td>
+										</tr>
+									</tbody>
+									
+								</table>
+							
+						</div>
+						
+						<div class="col-md-6">
+							
+							<pre>
+&lt;table class="table" <strong class="red">summary</strong>="Tabela com os preços em reais de ameixa preta e pera d'água  com um nível de cabeçalho de linha e um nível de cabeçalho de coluna"&gt;
+
+	<strong class="red">&lt;caption&gt;</strong>
+		Preços em reais de ameixa e pera em Campinas 
+	<strong class="red">&lt;/caption&gt;</strong>
+
+	<strong class="red">&lt;thead&gt;</strong>
+		&lt;tr&gt;
+			&lt;td&gt;&lt;/td&gt;
+			<strong class="red">&lt;th&gt;</strong>Ameixa preta<strong class="red">&lt;/th&gt;</strong>
+			<strong class="red">&lt;th&gt;</strong>Pera d'água<strong class="red">&lt;/th&gt;</strong>
+		&lt;/tr&gt;
+	<strong class="red">&lt;/thead&gt;</strong>
+	
+	<strong class="red">&lt;tfoot&gt;</strong>
+		
+		&lt;tr&gt;
+			&lt;td&gt;&lt;/td&gt;
+			&lt;th&gt;Ameixa preta&lt;/th&gt;
+			&lt;th&gt;Pera d'água&lt;/th&gt;
+		&lt;/tr&gt;
+		
+	<strong class="red">&lt;/tfoot&gt;</strong>
+
+	<strong class="red">&lt;tbody&gt;</strong>
+		&lt;tr&gt;
+			&lt;th&gt;Atacado&lt;/th&gt;
+			&lt;td&gt;1,00&lt;/td&gt;
+			&lt;td&gt;1,50&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Varejo&lt;/th&gt;
+			&lt;td&gt;2,00&lt;/td&gt;
+			&lt;td&gt;2,50&lt;/td&gt;
+		&lt;/tr&gt;
+	<strong class="red">&lt;/tbody&gt;</strong>
+	
+&lt;/table&gt;
+					
+							</pre>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
