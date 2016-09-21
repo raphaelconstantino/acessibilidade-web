@@ -31,45 +31,11 @@
 	
 	<body>
 	
-		<nav class="navbar navbar-inverse">
-		  <div class="container-fluid">
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-				  <a class="navbar-brand" href="#">Guia de Acessibilidade</a>
-				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-				  <ul class="nav navbar-nav">
-					<li class="active"><a href="index.html">Inicio</a></li>
-					<li><a href="#">Sobre</a></li>
-					<li><a href="#">Contacto</a></li>
-				  </ul>
-				  <ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				  </ul>
-				</div>
-			</div>
-		</nav>
+		<nav th:include="fragments/menu-topo" class="navbar navbar-inverse"></nav>
 		
 		<div class="container-fluid">
 			<div class="row content">
-				<div class="col-md-1 sidenav">
-					<p><a href="tabela.html">Tabela</a></p>
-					<p><a href="imagens.html">Imagens</a></p>
-					<p><a href="formularios.html">Formulários</a></p>
-					<p><a href="#">Cores</a></p>
-					<p><a href="#">Link</a></p>
-					<p><a href="#">Link</a></p>
-					<p><a href="#">Link</a></p>
-					<p><a href="#">Link</a></p>
-					<p><a href="#">Link</a></p>
-					<p><a href="#">Link</a></p>
-					<p><a href="#">Link</a></p>
-					<p><a href="#">Link</a></p>					
-				</div>	
+				<div th:include="fragments/menu" class="col-md-1 sidenav"></div>	
 			
 				<!-- Começo -->
 			

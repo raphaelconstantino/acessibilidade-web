@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="UTF-8">
+		<title>Imagens</title>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style>
+			p, ul {
+				padding-bottom : 10px;
+			}
+			
+			.red {
+				color : #ac2435;
+			}
+			
+			.conteudo {
+				padding-top: 20px;
+			}
+			
+			.sidenav {
+				background : #E6E6FA;
+				padding-top : 10px;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+	
+		<nav th:include="fragments/menu-topo" class="navbar navbar-inverse"></nav>
+		
+		<div class="container-fluid">
+			<div class="row content">
+				<div th:include="fragments/menu" class="col-md-1 sidenav"></div>	
+			
+				<!-- Começo -->
+			
+				<div class="col-md-11">
+				
+					<h2>Medidas</h2>
+					<div>
+						<!-- <i><a href="#" target="_blank">Resumo</a></i> -->
+						|
+						<i><a href="http://tableless.com.br/unidade-pixels-em-rem/" target="_blank">Fonte</a></i>
+					</div>	
+					
+				</div>
+					
+			</div>
+		</div>
+	</body>
+
+</html>
