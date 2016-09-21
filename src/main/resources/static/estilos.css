@@ -1,0 +1,16 @@
+p, ul {
+	padding-bottom : 10px;
+}
+
+.red {
+	color : #ac2435;
+}
+
+.conteudo {
+	padding-top: 20px;
+}
+
+.sidenav {
+	background : #E6E6FA;
+	padding-top : 10px;
+}
