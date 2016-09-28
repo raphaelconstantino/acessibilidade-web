@@ -40,16 +40,84 @@
 					
 						<h3>Usar <strong>alt</strong> para botões do tipo image</h3>
 						<p>
-							No caso de botões com &lt;input type="img"&gt;, utilize o atributo alt para indicar a ação a ser feita; por exemplo, alt=”enviar formulário”.
+							No caso de botões com &lt;input type="img"&gt;, utilize o atributo alt para indicar a ação a ser feita; por exemplo, alt=”enviar formulário”. <br/>
 							Essa técnica garante que tecnologias assistivas possam relacionar adequadamente os respectivos textos com seu campo de formulário
 						</p>
 						
 						<h3>Agrupar blocos de formulário confome dados utilizando <strong>LEGEND</strong> e <strong>FIELDSET</strong></h3>
 						<p>
-							
+							É recomendável agrupar blocos de formulário conforme o tipo de dado solicitado.<br/>
+							Para evitar que um campo apareça duas vezes sem sua devida marcação de grupo, utilize o elemento <strong>fieldset</strong> para agrupar os blocos e o elemento <strong>legend</strong> para declarar o título adequado daquele grupo.
 						</p>
 						
-					</div>					
+						<h3>Usar <strong>aria-required="true"</strong> para campos obrigatórios</h3>
+						<p>Muitas páginas têm problemas com acessibilidade por se preocuparem apenas em expressar visualmente as restrições. <br/>
+							Por exemplo, um formulário que indica os campos obrigatórios apenas através da mudança de cor do input. Um usuário que não pode ver, não saberá quais campos são de preenchimento obrigatório. <br/>
+							A solução é justamente usar <strong>aria-required="true"</strong>
+						</p>
+						
+						<h3>Usar <strong>area-label</strong> para campos input</h3>
+						<p>Usamos novamente no botão um <strong>aria-label</strong> para sobrescrever a descrição utilizada pelo leitor de tela para o componente.</p>
+
+						
+					</div>
+
+					<div class="row conteudo">
+						
+						<div class="col-md-5">
+							
+							<form action="" method="post" role="form"> 
+								<fieldset> 
+									<legend>Título do Formulário</legend> 
+									<p>(*) campos obrigatórios</p> 
+									<div class="form-group"> 
+										<label for="name">Nome</label>* 
+										<input class="form-control" name="name" aria-required="true" type="text" id="name">
+									</div> 
+									<div class="form-group"> 
+										<label for="email">E-mail</label>* 
+										<input class="form-control email" name="email" aria-required="true" type="text" id="email"> 
+									</div> 
+									<div class="form-group"> 
+										<label for="msg">Mensagem</label>* 
+										<textarea class="form-control" cols="30" rows="10" name="msg" aria-required="true" id="msg"> </textarea> 
+									</div>
+									<input class="btn btn-primary" type="submit" aria-label="Enviar dados do formulário simples" value="Enviar dados"> 
+								</fieldset> 
+							</form>
+							
+						</div>
+						
+						<div class="col-md-7">
+								
+							<pre>
+							
+&lt;form action="" method="post" role="form"&gt; 
+	<strong class="red">&lt;fieldset&gt;</strong> 
+		<strong class="red">&lt;legend&gt;Título do Formulário&lt;/legend&gt; </strong>
+		&lt;p&gt;(*) campos obrigatórios&lt;/p&gt; 
+		&lt;div class="form-group"&gt; 
+			<strong class="red">&lt;label for="name"&gt;Nome&lt;/label&gt;* </strong>
+			&lt;input class="form-control" name="name" <strong class="red">aria-required="true"</strong> type="text" <strong class="red">id="name"&gt;</strong>
+		&lt;/div&gt; 
+		&lt;div class="form-group"&gt; 
+			<strong class="red">&lt;label for="email"&gt;E-mail&lt;/label&gt;*</strong> 
+			&lt;input class="form-control email" name="email" <strong class="red">aria-required="true"</strong> type="text" <strong class="red">id="email"&gt;</strong>
+		&lt;/div&gt; 
+		&lt;div class="form-group"&gt; 
+			<strong class="red">&lt;label for="msg"&gt;Mensagem&lt;/label&gt;* </strong>
+			&lt;textarea class="form-control" cols="30" rows="10" name="msg" <strong class="red">aria-required="true"</strong> <strong class="red">id="msg"&gt;</strong> &lt;/textarea&gt; 
+		&lt;/div&gt;
+		&lt;input class="btn btn-primary" type="submit" <strong class="red">aria-label="Enviar dados do formulário simples"</strong> value="Enviar dados"&gt; 
+	<strong class="red">&lt;/fieldset&gt; </strong>
+&lt;/form&gt;
+							
+							</pre>
+							
+						</div>	
+						
+					</div>	
+
 					
 				</div>
 					
