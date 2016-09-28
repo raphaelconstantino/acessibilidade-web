@@ -9,6 +9,15 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="stylesheet" href="estilos.css">
+		<style>
+			.alerta {
+				background-color : #FF6347;
+				border: 1px solid #8B0000;
+				border-radius: 1em;
+				padding : 5px 30px;
+				margin : auto 0;
+			}
+		</style>
 		
 	</head>
 	
@@ -30,7 +39,118 @@
 						|
 						<i><a href="http://www.acessibilidadelegal.com/13-formularios.php" target="_blank">Fonte</a></i>
 					</div>		
+					
+					<div>
+				
+						<h3>Mensagem de erros em formulários</h3>
+						<p>
+							Quando ocorrer um erro de entrada de dados, seja pelo não preenchimento de campos obrigatórios ou pelo preenchimento incorreto de algum campo, o item que apresenta erro deve ser identificado e o usuário deve ser informado por meio de texto.<br/> 
+							Após o envio das informações, caso exista algum campo incorreto, o mesmo deve receber o foco, e nele deverá conter uma mensagem informando claramente ao usuário o real motivo do problema, para que possa ser resolvido, permitindo o envio dos dados. <br/>
+							Para melhorar isso aos usuários com deficiência visual, podemos utilizar WAI-ARIA, implementando <strong>aria-invalid="true"</strong>, que informa ao leitor que existe erro no campo. E usar <strong>aria-label</strong> para descrever exatamente o erro ocorrido.
+						</p>
+						
+						<h3>Alerta de status após submeter formuários</h3>
+						<p>
+							Após submeter seu formulário ao servidor, podemos a informação de sucesso ou de erro. O atributo <strong>role="alert"</strong> facilita para o leitor de tela que esse elemento é um alerta, já que ele receberá o foco logo em seguida. <br/>
+							Em seguida, será necessário a implementação via JavaScript que o elemento tenha foco e receba o atributo <strong>tabindex="-1"</strong>, assim o leitor de tela consegue dar prioridade e mostrar ao usuário a informação que ali consta.
+						</p>
+					
+					</div>
+					
+					<div class="row conteudo">
+						
+						<div class="col-md-12">
+						
+							<h3 class="space-large-bottom">Exemplo de erro em entrada de dados</h3>
+							<div class="col-md-4">
+						
+								<form action="" method="post" role="form"> 
+									<fieldset> 
+										<legend class="no-border">Formulário Simples</legend> 
+										<p>(*) campos obrigatórios</p>
+										<div class="form-group has-error"> 
+											<label for="name">Nome</label>* 
+											<input class="form-control required" name="name" aria-required="true" type="text" id="name" aria-invalid="true" aria-label="Não pode ficar em branco"> 
+											<p for="name" class="help-block">Não pode ficar em branco</p> 
+										</div>
+										<div class="form-group has-error"> 
+											<label for="email">E-mail</label>* 
+											<input class="form-control email required" name="email" aria-required="true" type="text" id="email" aria-invalid="true" aria-label="Preencha com um e-mail válido">
+											<p for="email" class="help-block"> Preencha com um e-mail válido </p> 
+										</div>
+										<div class="form-group has-error"> 
+											<label for="msg">Mensagem</label>* 
+											<textarea class="form-control required" cols="30" rows="10" name="msg" aria-required="true" id="msg" aria-invalid="true" aria-label="Não pode ficar em branco"> </textarea> 
+											<p for="msg" class="help-block">Não pode ficar em branco</p> 
+										</div>
+										<input class="btn btn-primary" type="submit" aria-label="Enviar dados do formulário simples" value="Enviar dados">
+									</fieldset> 
+								</form>
 
+						
+							</div>
+						
+							<div class="col-md-8">
+									
+								<pre>
+							
+&lt;form action="" method="post" role="form"&gt;  
+	&lt;fieldset&gt;  
+		&lt;legend class="no-border"&gt; Formulário Simples&lt;/legend&gt;  
+		&lt;p&gt; (*) campos obrigatórios&lt;/p&gt; 
+		&lt;div class="form-group has-error"&gt;  
+			&lt;label for="name"&gt; Nome&lt;/label&gt; * 
+			&lt;input class="form-control required" name="name" aria-required="true" type="text" id="name" <strong class="red">aria-invalid="true" aria-label="Não pode ficar em branco"</strong>&gt;  
+			&lt;p for="name" class="help-block"&gt; Não pode ficar em branco&lt;/p&gt;  
+		&lt;/div&gt; 
+		&lt;div class="form-group has-error"&gt;  
+			&lt;label for="email"&gt; E-mail&lt;/label&gt; * 
+			&lt;input class="form-control email required" name="email" aria-required="true" type="text" id="email" <strong class="red">aria-invalid="true" aria-label="Preencha com um e-mail válido"</strong>&gt; 
+			&lt;p for="email" class="help-block"&gt;  Preencha com um e-mail válido &lt;/p&gt;  
+		&lt;/div&gt; 
+		&lt;div class="form-group has-error"&gt;  
+			&lt;label for="msg"&gt; Mensagem&lt;/label&gt; * 
+			&lt;textarea class="form-control required" cols="30" rows="10" name="msg" aria-required="true" id="msg" <strong class="red">aria-invalid="true" aria-label="Não pode ficar em branco"</strong>&gt;  &lt;/textarea&gt;  
+			&lt;p for="msg" class="help-block"&gt; Não pode ficar em branco&lt;/p&gt;  
+		&lt;/div&gt; 
+		&lt;input class="btn btn-primary" type="submit" aria-label="Enviar dados do formulário simples" value="Enviar dados"&gt; 
+	&lt;/fieldset&gt;  
+&lt;/form&gt; 							
+							
+								</pre>
+								
+							</div>	
+							
+						</div>	
+						
+						
+						<div class="col-md-12">
+							<h3 class="space-large-bottom">Exemplo de alerta ao submeter</h3>
+							
+							<div class="col-md-4">
+								
+								<div class="alerta" role="alert"> 
+									Ocorreu um erro, por favor verifique se os campos foram preenchidos corretamente.
+								</div>
+								
+							</div>
+							
+							<div class="col-md-8">
+									
+								<pre>
+								
+&lt;div class="alerta" role="alert"&gt; 
+	&lt;p&gt;Mensagem enviada com sucesso&lt;/p&gt; 
+&lt;/div&gt;
+								
+								</pre>
+								
+							</div>	
+							
+							
+						</div>	
+						
+					</div>
 					
 				</div>
 					

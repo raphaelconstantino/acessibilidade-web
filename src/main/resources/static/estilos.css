@@ -14,3 +14,7 @@ p, ul {
 	background : #E6E6FA;
 	padding-top : 10px;
 }
+
+.space-large-bottom {
+	padding : 30px 0;
+}
