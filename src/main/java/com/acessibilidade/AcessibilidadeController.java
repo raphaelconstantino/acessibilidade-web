@@ -42,5 +42,11 @@ public class AcessibilidadeController {
     public String medidas(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "medidas";
+    }
+
+	@RequestMapping("/msgFormularios")
+    public String msgFormularios(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "mensagens-formulario";
     }	
 }
