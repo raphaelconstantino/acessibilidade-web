@@ -1,3 +1,27 @@
+html, body, .container-fluid, .content {
+	height : 100%
+}
+
+h1 {
+	font-size: 22px;
+    padding: 0 5px;
+	font-family : fontawesome;
+}
+
+h1 span {
+	color : #4CAF50;
+}
+
+.navbar-inverse {
+	background-color : #5f5f5f !important;
+	color : #f1f1f1 !important;
+	border : none !important;
+}
+
+.content {
+	display: flex;
+}
+
 p, ul {
 	padding-bottom : 10px;
 }
@@ -11,8 +35,27 @@ p, ul {
 }
 
 .sidenav {
-	background : #E6E6FA;
-	padding-top : 10px;
+	background : #f1f1f1;
+	height : 100%;
+	width : 12%;
+	padding : 10px 0;
+}
+
+.main-content {
+	width : 83%;
+	padding : 0 20px;
+}
+
+.sidenav p {
+	padding : 4px 20px;
+}
+
+.sidenav p:hover {
+	background-color : #ccc;
+}
+
+.sidenav p a {
+	text-decoration : none;
 }
 
 .space-large-bottom {

@@ -14,15 +14,17 @@
 	
 	<body>
 	
+		<h1>wAcessibilidade<span>.com</span></h1>
+	
 		<nav th:include="fragments/menu-topo" class="navbar navbar-inverse"></nav>
 		
 		<div class="container-fluid">
 			<div class="row content">
-				<div th:include="fragments/menu" class="col-md-2 sidenav"></div>	
+				<div th:include="fragments/menu" class="sidenav"></div>	
 			
 				<!-- Começo -->
 			
-				<div class="col-md-10">
+				<div class="main-content">
 				
 					<h2>Formulários</h2>
 					<div>
@@ -80,7 +82,7 @@
 									</div> 
 									<div class="form-group"> 
 										<label for="msg">Mensagem</label>* 
-										<textarea class="form-control" cols="30" rows="10" name="msg" aria-required="true" id="msg"> </textarea> 
+										<textarea class="form-control" cols="30" rows="4" name="msg" aria-required="true" id="msg"> </textarea> 
 									</div>
 									<input class="btn btn-primary" type="submit" aria-label="Enviar dados do formulário simples" value="Enviar dados"> 
 								</fieldset> 
@@ -106,7 +108,7 @@
 		&lt;/div&gt; 
 		&lt;div class="form-group"&gt; 
 			<strong class="red">&lt;label for="msg"&gt;Mensagem&lt;/label&gt;* </strong>
-			&lt;textarea class="form-control" cols="30" rows="10" name="msg" <strong class="red">aria-required="true"</strong> <strong class="red">id="msg"&gt;</strong> &lt;/textarea&gt; 
+			&lt;textarea class="form-control" cols="30" rows="4" name="msg" <strong class="red">aria-required="true"</strong> <strong class="red">id="msg"&gt;</strong> &lt;/textarea&gt; 
 		&lt;/div&gt;
 		&lt;input class="btn btn-primary" type="submit" <strong class="red">aria-label="Enviar dados do formulário simples"</strong> value="Enviar dados"&gt; 
 	<strong class="red">&lt;/fieldset&gt; </strong>
