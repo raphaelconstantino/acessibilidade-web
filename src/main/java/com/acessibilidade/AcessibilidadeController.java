@@ -49,4 +49,16 @@ public class AcessibilidadeController {
         model.addAttribute("name", name);
         return "mensagens-formulario";
     }	
+
+    @RequestMapping("/sobre")
+    public String sobre(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "sobre";
+    }   
+	
+	@RequestMapping("/contato")
+    public String contato(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "contato";
+    }  
 }
