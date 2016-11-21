@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="UTF-8">
+		<title>Roles</title>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="estilos.css">
+		<style>
+
+		</style>
+		
+	</head>
+	
+	<body>
+	
+		<h1>wAcessibilidade<span>.com</span></h1>
+	
+		<nav th:include="fragments/menu-topo" class="navbar navbar-inverse"></nav>
+		
+		<div class="container-fluid">
+			<div class="row content">
+				<div th:include="fragments/menu" class="sidenav"></div>	
+			
+				<!-- Começo -->
+			
+				<div class="main-content">
+				
+					<h2>Roles</h2>
+					<div>
+						<i><a href="#" target="_blank">Fonte</a></i>
+					</div>		
+
+					<div>
+
+						<h3>Tipos de Roles</h3>
+					
+						<p>
+							O atributo role no HTML redefine o significado semântico de um elemento, melhorando sua interpretação pelos leitores de tela. As roles são classificadas da seguinte maneira:
+						</p>
+						
+						<ol>
+							<li>Abstract Roles — definem conceitos gerais, mas não servem para marcar conteúdo; </li>
+							<li>Widget Roles — como o próprio nome diz, servem para definir widgets de interface do usuário;  </li>
+							<li>Document Structure Roles — usados em estruturas que organizam o conteúdo em uma página, que geralmente não é interativo;  </li>
+							<li>Landmark Roles — regiões importantes de navegação. </li>
+						</ol>
+
+					</div>
+					
+				
+				</div>
+					
+			</div>
+		</div>
+	</body>
+
+</html>

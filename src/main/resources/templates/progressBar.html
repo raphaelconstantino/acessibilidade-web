@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="UTF-8">
+		<title>Barra de Progresso</title>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="estilos.css">
+		<style>
+
+		</style>
+		
+	</head>
+	
+	<body>
+	
+		<h1>wAcessibilidade<span>.com</span></h1>
+	
+		<nav th:include="fragments/menu-topo" class="navbar navbar-inverse"></nav>
+		
+		<div class="container-fluid">
+			<div class="row content">
+				<div th:include="fragments/menu" class="sidenav"></div>	
+			
+				<!-- Começo -->
+			
+				<div class="main-content">
+				
+					<h2>Barra de Progresso</h2>
+					<div>
+						<i><a href="#" target="_blank">Fonte</a></i>
+					</div>		
+
+					<div>
+
+						<h3>Usando DIVs em Barras de Progresso</h3>
+					
+						<p>
+							Muitas bibliotecas de componentes criam essa funcionalidade com elementos comuns como div e usandoJavaScript. <br/>
+							O problema de usar div simples para isso é que o conteúdo não é acessível. O leitor de tela não sabe que aquilo é uma barra de progresso.
+							Usando WAI-ARIA, podemos adicionar essa semântica. <br/>
+							Usando o atributo <strong>role="progressbar"</strong> indica semanticamente que o div representa uma barra de progressos. Além disso,usamos outras propriedades 
+							<strong>aria-</strong> para indicar valores semânticos que antes estavam apenas perdidos no texto ou no design. Em especial, <strong>aria-valuemax</strong> 
+							representa o valor máximo da barra de progresso,assim como <strong>aria-valuemin</strong> representa o mínimo.E a propriedade <strong>aria-valuenowrep</strong> 
+							resenta o valor atual.
+						</p>
+
+					</div>
+					
+					
+					<div class="row conteudo">
+					
+						<div class="col-md-12">
+						
+							<h3 class="space-large-bottom">Exemplo de Barra de Progresso</h3>
+							<div class="col-md-4">
+
+							<div class="progress">
+								<div  class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+									<span class="sr-only">75% Completo</span>
+								</div>
+							</div>	
+						
+							</div>
+							
+							<div class="col-md-8">
+									
+								<pre>	
+
+&lt;div class="my-progress-bar" <strong class="red">role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"</strong>
+75%
+&lt;/div&gt;								
+								
+								</pre>
+								
+							</div>	
+						
+						</div>
+					
+					</div>
+				
+				</div>
+					
+			</div>
+		</div>
+	</body>
+
+</html>

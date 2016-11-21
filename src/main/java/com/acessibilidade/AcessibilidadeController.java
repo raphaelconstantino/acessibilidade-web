@@ -13,6 +13,12 @@ public class AcessibilidadeController {
         model.addAttribute("name", name);
         return "index";
     }
+	
+	@RequestMapping("/roles")
+    public String roles(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "roles";
+    }	
 
     @RequestMapping("/tabelas")
     public String tabelas(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
@@ -48,7 +54,19 @@ public class AcessibilidadeController {
     public String msgFormularios(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "mensagens-formulario";
+    }
+
+	@RequestMapping("/progressBar")
+    public String progressBar(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "progressBar";
     }	
+	
+	@RequestMapping("/tabs")
+    public String tabs(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "tabs";
+    }
 
     @RequestMapping("/sobre")
     public String sobre(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {

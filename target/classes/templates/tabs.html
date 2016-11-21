@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="UTF-8">
+		<title>Abas</title>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="estilos.css">
+		<style>
+			.hide {
+				display : none;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function() {
+				
+				$(".nav a").click(function (e) {
+					
+					e.preventDefault();
+					
+					$("[role=tab][aria-selected=true]").attr("aria-selected", "false"); 
+					$(this).attr("aria-selected", "true");
+
+					
+					// Clear
+					$(".nav").find(".active").removeClass("active");
+					$("#tab-content div").addClass("hide");
+					
+					// Add
+					var sId = $(this).attr("href");
+					$(this).closest("li").addClass("active");
+					$(sId).removeClass("hide");
+					
+				});
+			
+			});
+		</script>
+		
+	</head>
+	
+	<body>
+	
+		<h1>wAcessibilidade<span>.com</span></h1>
+	
+		<nav th:include="fragments/menu-topo" class="navbar navbar-inverse"></nav>
+		
+		<div class="container-fluid">
+			<div class="row content">
+				<div th:include="fragments/menu" class="sidenav"></div>	
+			
+				<!-- Começo -->
+			
+				<div class="main-content">
+				
+					<h2>Abas</h2>
+					<div>
+						<i><a href="#" target="_blank">Fonte</a></i>
+					</div>		
+
+					<div>
+
+						<h3>Utilizando tags ROLE</h3>
+					
+						<p>
+							Um exemplo de implementação de um controle de Abas usando <strong>role="tab"</strong> para representar a aba em si e <strong>role="tabpanel"</strong> que representa o conteúdo mostrado naquela aba.
+							Além disso foi utilizada a propiedade <strong>aria-</strong>. A <strong>aria-labelledby</strong> amarra o elemento do conteúdo das abas com o elemento que o descreve.
+							Na prática, aponta para o id do elemento que representa a aba. Já a propriedade <strong>aria-selected</strong> permite indicarmos qual aba está selecionada atualmente. 
+							Se implementássemos um controle via JavaScript para troca de abas, por exemplo, basta alterar o valor desse atributo:
+
+						</p>
+
+					</div>
+					
+					
+					<div class="row conteudo">
+					
+						<div class="col-md-12">
+						
+							<h3 class="space-large-bottom">Exemplo de Abas</h3>
+							<div class="col-md-4">
+
+								<ul class="nav nav-tabs"> 
+									<li class="active"> <a href="#panel1" id="tab1" role="tab" aria-selected="true"> Aba 1 </a> </li> 
+									<li> <a href="#panel2" id="tab2" role="tab">Aba 2</a> </li> 
+									<li> <a href="#panel3" id="tab3" role="tab">Aba 3</a> </li> 
+								</ul>
+
+								<div id="tab-content">
+									<div id="panel1" role="tabpanel" aria-labelledby="tab1"> Primeira aba </div> 
+									<div id="panel2" role="tabpanel" aria-labelledby="tab2" class="hide"> Segunda aba </div> 
+									<div id="panel3" role="tabpanel" aria-labelledby="tab3" class="hide"> Terceira aba </div> 							
+								</div>	
+						
+							</div>
+							
+							<div class="col-md-8">
+									
+								<pre>	
+&lt;ul class="nav nav-tabs"&gt; 
+	&lt;li class="active"&gt; &lt;a href="#panel1" id="tab1" <strong class="red">role="tab" aria-selected="true"</strong>&gt; Aba 1 &lt;/a&gt; &lt;/li&gt; 
+	&lt;li&gt; &lt;a href="#panel2" id="tab2" role="tab"&gt;Aba 2&lt;/a&gt; &lt;/li&gt; 
+	&lt;li&gt; &lt;a href="#panel3" id="tab3" role="tab"&gt;Aba 3&lt;/a&gt; &lt;/li&gt; 
+&lt;/ul&gt;
+
+&lt;div id="tab-content"&gt;
+	&lt;div id="panel1" <strong class="red">role="tabpanel" aria-labelledby="tab1"</strong>&gt; Primeira aba &lt;/div&gt; 
+	&lt;div id="panel2" <strong class="red">role="tabpanel" aria-labelledby="tab2"</strong>&gt; Segunda aba &lt;/div&gt; 
+	&lt;div id="panel3" <strong class="red">role="tabpanel" aria-labelledby="tab3"</strong>&gt; Terceira aba &lt;/div&gt; 							
+&lt;/div&gt;									
+								
+&lt;script&gt;					
+
+$("[role=tab]").click(function(){ 
+	$("[role=tab][aria-selected=true]").attr("aria-selected", "false"); 
+	$(this).attr("aria-selected", "true"); 
+});
+
+&lt;/script&gt;			
+								
+								</pre>
+								
+							</div>	
+						
+						</div>
+					
+					</div>
+				
+				</div>
+					
+			</div>
+		</div>
+	</body>
+
+</html>
