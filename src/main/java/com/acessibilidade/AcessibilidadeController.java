@@ -68,6 +68,12 @@ public class AcessibilidadeController {
         return "tabs";
     }
 
+	@RequestMapping("/rolesMenus")
+    public String rolesMenus(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "roles-menus";
+    }	
+
     @RequestMapping("/sobre")
     public String sobre(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);

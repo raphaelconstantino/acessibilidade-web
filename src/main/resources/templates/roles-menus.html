@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="UTF-8">
+		<title>Menus</title>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="estilos.css">
+		<style>
+			
+		</style>
+		
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+	</head>
+	
+	<body>
+	
+		<h1>wAcessibilidade<span>.com</span></h1>
+	
+		<nav th:include="fragments/menu-topo" class="navbar navbar-inverse"></nav>
+		
+		<div class="container-fluid">
+			<div class="row content">
+				<div th:include="fragments/menu" class="sidenav"></div>	
+			
+				<!-- Começo -->
+			
+				<div class="main-content">
+				
+					<h2>Menus</h2>
+					<div>
+						<i><a href="#" target="_blank">Fonte</a></i>
+					</div>		
+
+					<div>
+
+						<h3>Melhorando a acessibilidade de Menus</h3>
+					
+						<p>
+						
+						 É importante dar mais significado implementando as arias como atributo <strong>role="menuitem"</strong>. Além disso, a <strong>role="navigation"</strong>serve para que os 
+						 landmarks dos leitores possam entender que ali é uma navegação. No caso de existir submenus, implemente <strong>aria-expanded="false"</strong> e <strong>aria-hidden="true"</strong> 
+						 e altere os valores (via JavaScript) para <strong>aria-expanded="true" aria-hidden="false"</strong> conforme o usuário expande os submenus. Com isso, o leitor entenderá que essa lista 
+						 de links está em outro nível. 
+						 Importante: submenus devem ser acessíveis via teclado e não somente com o mouse.
+
+						
+						</p>
+
+					</div>
+					
+					
+					<div class="row conteudo">
+					
+						<div class="col-md-12">
+						
+							<h3 class="space-large-bottom">Exemplo de Menu</h3>
+							<div class="col-md-4">
+
+								<nav class="navbar navbar-default">
+									<ul class="nav navbar-nav">
+										<li> 
+											<a href="#" role="menuitem">menu 1</a>
+										</li> 
+										<li class="dropdown">
+											<a class="dropdown-toggle" data-toggle="dropdown" role="menuitem" href="#">
+												menu 2 <span class="caret"></span>
+											</a>
+											<ul class="dropdown-menu" aria-expanded="false" aria-hidden="true">
+											  <li><a href="#" role="menuitem">Submenu 1</a></li>
+											  <li><a href="#" role="menuitem">Submenu 2</a></li>
+											</ul>
+										</li>
+									</ul>
+								</nav>	
+						
+							</div>
+							
+							<div class="col-md-8">
+									
+								<pre>	
+								
+&lt;nav class="navbar navbar-default"&gt;
+	&lt;ul class="nav navbar-nav"&gt;
+		&lt;li&gt; 
+			&lt;a href="#" <strong class="red">role="menuitem"</strong>&gt;menu 1&lt;/a&gt;
+		&lt;/li&gt; 
+		&lt;li class="dropdown"&gt;
+			&lt;a class="dropdown-toggle" data-toggle="dropdown" <strong class="red">role="menuitem"</strong> href="#"&gt;
+				menu 2 &lt;span class="caret"&gt;&lt;/span&gt;
+			&lt;/a&gt;
+			&lt;ul class="dropdown-menu" <strong class="red">aria-expanded="false" aria-hidden="true"</strong>&gt;
+			  &lt;li&gt;&lt;a href="#" <strong class="red">role="menuitem"</strong>&gt;Submenu 1&lt;/a&gt;&lt;/li&gt;
+			  &lt;li&gt;&lt;a href="#" <strong class="red">role="menuitem"</strong>&gt;Submenu 2&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;	
+								
+								</pre>
+								
+							</div>	
+						
+						</div>
+					
+					</div>
+				
+				</div>
+					
+			</div>
+		</div>
+	</body>
+
+</html>
