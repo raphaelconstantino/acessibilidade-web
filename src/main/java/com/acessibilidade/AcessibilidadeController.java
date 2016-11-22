@@ -72,6 +72,12 @@ public class AcessibilidadeController {
     public String rolesMenus(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "roles-menus";
+    }
+
+	@RequestMapping("/modal")
+    public String modal(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "modal";
     }	
 
     @RequestMapping("/sobre")

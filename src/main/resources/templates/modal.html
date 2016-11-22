@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta charset="UTF-8">
+		<title>Modal</title>
+	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="estilos.css">
+		<style>
+
+		</style>
+		
+	</head>
+	
+	<body>
+	
+		<h1>wAcessibilidade<span>.com</span></h1>
+	
+		<nav th:include="fragments/menu-topo" class="navbar navbar-inverse"></nav>
+		
+		<div class="container-fluid">
+			<div class="row content">
+				<div th:include="fragments/menu" class="sidenav"></div>	
+			
+				<!-- Começo -->
+			
+				<div class="main-content">
+				
+					<h2>Modal</h2>
+					<div>
+						<i><a href="#" target="_blank">Fonte</a></i>
+					</div>		
+
+					<div>
+
+						<h3>Implementando uma Modal</h3>
+					
+						<p>
+							 Utilizando as Arias podemos deixar as modals mais sensíveis aos leitores de tela. O atributo <strong>role="dialog"</strong> informará ao leitor que ele está 
+							 dentro de uma caixa de diálogo. Além disso, o <strong>aria-labelledby</strong> possui valor do ID do elemento que descreve a caixa de diálogo, que pode ser o título, 
+							 assim o leitor informa o usuário o nome desse modal.<br/>
+							 Outro atributo muito utilizado é <strong>aria-label</strong> aplicado no botão de fechar. O botão foi construído com apenas um "x”, que é adequado para usuários visuais 
+							 saberem que serve para fechar. Mas,para leitores de tela, usamos uma frase melhor, com <strong>aria-label="Fechar"</strong>. O leitor vai interpretar esse valor na hora de ler para o usuário.
+						</p>
+
+					</div>
+					
+					
+					<div class="row conteudo">
+					
+						<div class="col-md-12">
+						
+							<h3 class="space-large-bottom">Exemplo de Modal</h3>
+							<div class="col-md-4" style="position : relative">
+								
+								<!-- Modal -->
+								<div id="myModal" class="modal fade in" role="dialog" aria-labelledby="titulo" style="display: block; position : relative;">
+								  <div class="modal-dialog modal-sm">
+
+									<!-- Modal content-->
+									<div class="modal-content">
+									  <div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Fechar Modal">&times;</button>
+										<h4 class="modal-title">Título da Modal</h4>
+									  </div>
+									  <div class="modal-body">
+										<p>Conteúdo do modal de exemplo</p>
+									  </div>
+									  <div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Fechar Modal">Fechar</button>
+									  </div>
+									</div>
+
+								  </div>
+								</div>								
+						
+							</div>
+							
+							<div class="col-md-8">
+									
+								<pre>									
+&lt;div id="myModal" <strong class="red">role="dialog" aria-labelledby="titulo"</strong>&gt;
+  &lt;div class="modal-dialog modal-sm"&gt;
+
+	&lt;div class="modal-content"&gt;
+	  &lt;div class="modal-header"&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" <strong class="red">aria-label="Fechar Modal"</strong> &gt;&times;&lt;/button&gt;
+		&lt;h4 class="modal-title"&gt;Título da Modal&lt;/h4&gt;
+	  &lt;/div&gt;
+	  &lt;div class="modal-body"&gt;
+		&lt;p&gt;Conteúdo do modal de exemplo&lt;/p&gt;
+	  &lt;/div&gt;
+	  &lt;div class="modal-footer"&gt;
+		&lt;button type="button" data-dismiss="modal" <strong class="red">aria-label="Fechar Modal"</strong>&gt;Fechar&lt;/button&gt;
+	  &lt;/div&gt;
+	&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;									
+								</pre>
+								
+							</div>	
+						
+						</div>
+					
+					</div>
+				
+				</div>
+					
+			</div>
+		</div>
+	</body>
+
+</html>
