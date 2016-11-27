@@ -27,7 +27,7 @@
 					   url : "/infoes",
 					   type: 'POST',
 					   contentType:  'application/json',
-					   data: JSON.stringify( { "titulo" : $("#titulo").val(), "descricao" : $("#descricao").val() } ),
+					   data: JSON.stringify( { "titulo" : $("#titulo").val(), "descricao" : encodeURI($("#descricao").val()) } ),
 					   success : function () {
 							$("#msg").removeClass("hide");
 					   }
