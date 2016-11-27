@@ -13,8 +13,7 @@ public class Info {
     private long id;
  
     private String titulo;
-	@Column(columnDefinition="LONGTEXT")
-    private String descricao;
+    private StringBuffer descricao;
 	private String link;
 	private String video;
 	private String imagem;
@@ -27,11 +26,11 @@ public class Info {
         this.titulo = titulo;
     }
  
-    public String getDescricao() {
+    public StringBuffer getDescricao() {
         return descricao;
     }
  
-    public void setDescricao(String descricao) {
+    public void setDescricao(StringBuffer descricao) {
         this.descricao = descricao;
     }
 	
