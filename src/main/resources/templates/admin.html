@@ -19,7 +19,7 @@
 			$(document).ready(function() {
 				
 
-				$(".delete").on("body", "click", function(e) {
+				$("#noticias").on(".delete", "click", function(e) {
 					e.preventDefault();
 					var href = $(this).attr("href");
 					$.ajax({
@@ -46,7 +46,7 @@
 						
 						for (var i = 0; i < infoes.length; i++)
 						{
-							$lines += "<li>" + infoes[i].titulo + "<a class='delete' href="+ infoes[i]._links.info.href +">Deletar</a>";
+							$lines += "<li>" + infoes[i].titulo + "<a class='delete btn btn-danger' href="+ infoes[i]._links.info.href +">Deletar</a>";
 						}
 						
 						$("#noticias").html($lines);
