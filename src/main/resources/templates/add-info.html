@@ -14,6 +14,7 @@
 			.hide {
 				display : none;
 			}
+
 		</style>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 		<script>
@@ -27,7 +28,7 @@
 					   url : "/infoes",
 					   type: 'POST',
 					   contentType:  'application/json',
-					   data: JSON.stringify( { "titulo" : $("#titulo").val(), "descricao" : encodeURI($("#descricao").val()) } ),
+					   data: JSON.stringify( { "titulo" : $("#titulo").val(), "descricao" : encodeURIComponent($("#descricao").val()) } ),
 					   success : function () {
 							$("#msg").removeClass("hide");
 					   }
