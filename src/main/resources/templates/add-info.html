@@ -13,7 +13,29 @@
 		<style>
 
 		</style>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<script>
 		
+			$(document).ready(function() {
+
+				$("form").on("submit", function(e) {
+					e.preventDefault();
+					
+					$.ajax({
+					   url : "http://localhost:8080/infoes",
+					   type: 'POST',
+					   contentType:  'application/json',
+					   data: JSON.stringify( { "titulo" : $("#titulo").val(), "descricao" : $("#descricao").val() } ),
+					   success : function () {
+						
+					   }
+					});
+					
+				});				
+				
+			});	
+		
+		</script>
 	</head>
 	
 	<body>
@@ -58,6 +80,21 @@
 					<li class="active"><a href="/addInfo">Adicionar Noticia</a></li>
 				</ul>
 			</div>
+			
+			<h2>Adicionar Noticia</h2>
+			
+			<form method="post" >
+				<div class="form-group">
+					<label for="titulo">Titulo:</label>
+					<input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="tituloHelp" placeholder="Digite o titulo" />
+					<small id="tituloHelp" class="form-text text-muted">Digite o titulo</small>
+				</div>
+				<div class="form-group">
+					<label for="descricao">Digite a descricao:</label>
+					<textarea class="form-control" id="descricao" rows="10" name="descricao"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Enviar</button>
+			</form>			
 			
 		</div>
 		
