@@ -12,9 +12,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.csrf().disable();
+		
+		http
             .authorizeRequests()
-                .antMatchers("/admin").authenticated()
+                .antMatchers("/admin", "/addInfo").authenticated()
                 .and()
             .formLogin()
                 .loginPage("/login")
