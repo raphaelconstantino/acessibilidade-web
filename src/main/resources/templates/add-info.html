@@ -28,7 +28,7 @@
 					   url : "/infoes",
 					   type: 'POST',
 					   contentType:  'application/json',
-					   data: JSON.stringify( { "titulo" : $("#titulo").val(), "descricao" : encodeURIComponent($("#descricao").val()) } ),
+					   data: JSON.stringify( { "titulo" : $("#titulo").val(), "descricao" : $("#descricao").val(),  $("#link").val(),  $("#video").val()} ),
 					   success : function () {
 							$("#msg").removeClass("hide");
 					   }
@@ -101,6 +101,16 @@
 					<label for="descricao">Digite a descricao:</label>
 					<textarea class="form-control" id="descricao" rows="10" name="descricao"></textarea>
 				</div>
+				<div class="form-group">
+					<label for="link">Digite a url:</label>
+					<input type="text" class="form-control" name="link" id="link" aria-describedby="linkHelp" placeholder="Digite a url" />
+					<small id="linkHelp" class="form-text text-muted">Digite a url</small>
+				</div>	
+				<div class="form-group">
+					<label for="video">Digite a url do video:</label>
+					<input type="text" class="form-control" name="video" id="video" aria-describedby="videoHelp" placeholder="Digite a url do video" />
+					<small id="videoHelp" class="form-text text-muted">Digite a url do video</small>
+				</div>					
 				<button type="submit" class="btn btn-primary">Enviar</button>
 			</form>			
 			

@@ -14,6 +14,8 @@ public class Info {
  
     private String titulo;
     private String descricao;
+	private String link;
+	private String video;
  
     public String getTitulo() {
         return titulo;
@@ -29,5 +31,21 @@ public class Info {
  
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+	
+	public String getLink() {
+        return link;
+    }
+ 
+    public void setLink(String link) {
+        this.link = link;
+    }
+	
+	public String getVideo() {
+        return video;
+    }
+ 
+    public void setVideo(String video) {
+        this.video = video;
     }
 }
