@@ -22,7 +22,7 @@
 					e.preventDefault();
 					
 					$.ajax({
-					   url : "http://localhost:8080/infoes",
+					   url : "/infoes",
 					   type: 'POST',
 					   contentType:  'application/json',
 					   data: JSON.stringify( { "titulo" : $("#titulo").val(), "descricao" : $("#descricao").val() } ),
