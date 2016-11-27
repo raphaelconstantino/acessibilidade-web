@@ -13,7 +13,49 @@
 		<style>
 
 		</style>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+		<script>
 		
+			$(document).ready(function() {
+				
+
+				$(body).on(".delete", "click", function(e) {
+					e.preventDefault();
+					var href = $(this).attr("href");
+					$.ajax({
+					   url : href,
+					   type: 'DELETE',
+					   success : function () {
+							$("#msg").removeClass("hide");
+					   }
+					});
+				});
+				
+				$.ajax({
+				   url : "/infoes",
+				   type: 'GET',
+				   success : function (e) {
+				   
+						if (e == null || e._embedded == null || e._embedded.info == null)
+						{
+							return;
+						}
+				   
+						var infoes = e._embedded.info;
+						var $lines = "";
+						
+						for (var i = 0; i < infoes.length; i++)
+						{
+							$lines += "<li>" + infoes[i].titulo + "<a class='delete' href="+ infoes[i]._links.info.href +">Deletar</a>";
+						}
+						
+						$("#noticias").html($lines);
+				   }
+				});								
+				
+			});	
+		
+		</script>
 	</head>
 	
 	<body>
@@ -55,9 +97,18 @@
 			
 			<div class="collapse navbar-collapse" id="myInnerNavbar">
 				<ul class="nav navbar-nav">
+					<li class="active"><a href="/admin">Lista Noticias</a></li>
 					<li class="active"><a href="/addInfo">Adicionar Noticia</a></li>
 				</ul>
 			</div>
+			
+			<div id="msg" class="hide alert alert-info">
+				Noticia adicionada com sucesso!
+			</div>
+			
+			<ul id="noticias">
+				
+			</ul>
 			
 		</div>
 		
