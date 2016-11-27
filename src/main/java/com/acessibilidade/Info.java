@@ -13,9 +13,11 @@ public class Info {
     private long id;
  
     private String titulo;
+	@Column(columnDefinition="LONGTEXT")
     private String descricao;
 	private String link;
 	private String video;
+	private String imagem;
  
     public String getTitulo() {
         return titulo;
@@ -47,5 +49,13 @@ public class Info {
  
     public void setVideo(String video) {
         this.video = video;
+    }
+	
+	public String getImagem() {
+        return imagem;
+    }
+ 
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
     }
 }
