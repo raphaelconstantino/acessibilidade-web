@@ -14,6 +14,18 @@ public class AcessibilidadeController {
         return "index";
     }
 	
+	@RequestMapping("/admin")
+    public String admin(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "admin";
+    }
+	
+	@RequestMapping("/login")
+    public String login(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "login";
+    }	
+	
 	@RequestMapping("/roles")
     public String roles(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
