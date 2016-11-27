@@ -54,7 +54,7 @@
 							
 							for (var i = 0; i < infoes.length; i++)
 							{
-								$lines += "<li>" + infoes[i].titulo + " <a class='delete btn btn-danger' href="+ infoes[i]._links.info.href +">Deletar</a>";
+								$lines += "<li>" + decodeURI(infoes[i].titulo) + " <a class='delete btn btn-danger' href="+ infoes[i]._links.info.href +">Deletar</a>";
 							}
 							
 							$("#noticias").html($lines);

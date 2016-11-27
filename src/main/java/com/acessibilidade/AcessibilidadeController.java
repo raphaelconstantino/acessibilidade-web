@@ -30,6 +30,12 @@ public class AcessibilidadeController {
     public String addInfo(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         return "add-info";
+    }
+
+	@RequestMapping("/infos")
+    public String infos(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "infos";
     }	
 	
 	@RequestMapping("/roles")
