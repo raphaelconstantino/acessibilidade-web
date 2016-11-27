@@ -1,3 +1,5 @@
 com\acessibilidade\WebSecurityConfig.class
+com\acessibilidade\Info.class
+com\acessibilidade\InfoRepository.class
 com\acessibilidade\AcessibilidadeApplication.class
 com\acessibilidade\AcessibilidadeController.class
