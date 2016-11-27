@@ -12,14 +12,6 @@ import com.acessibilidade.Info;
  
 @RepositoryRestResource(collectionResourceRel = "info", path = "infoes")
 public interface InfoRepository extends PagingAndSortingRepository<Info, Long> {
- 
-	
-	List<Info> findByName(@Param("name") String name);
-	
-	@Query("SELECT c.Name FROM Client c where c.id = :id") 
-	Info findNameById(@Param("id") Long id);
-	
-	
-	List<Info> findByNameOrderByName(@Param("name") String name);
+
 	
 }
