@@ -19,7 +19,7 @@
 			$(document).ready(function() {
 				
 
-				$("#noticias").on(".delete", "click", function(e) {
+				$("#noticias").on("click", "a", function(e) {
 					e.preventDefault();
 					var href = $(this).attr("href");
 					$.ajax({
@@ -27,31 +27,36 @@
 					   type: 'DELETE',
 					   success : function () {
 							$("#msg").removeClass("hide");
+							fetchInfos();
 					   }
 					});
 				});
 				
-				$.ajax({
-				   url : "/infoes",
-				   type: 'GET',
-				   success : function (e) {
-				   
-						if (e == null || e._embedded == null || e._embedded.info == null)
-						{
-							return;
-						}
-				   
-						var infoes = e._embedded.info;
-						var $lines = "";
-						
-						for (var i = 0; i < infoes.length; i++)
-						{
-							$lines += "<li>" + infoes[i].titulo + "<a class='delete btn btn-danger' href="+ infoes[i]._links.info.href +">Deletar</a>";
-						}
-						
-						$("#noticias").html($lines);
-				   }
-				});								
+				function fetchInfos () {
+					$.ajax({
+					   url : "/infoes",
+					   type: 'GET',
+					   success : function (e) {
+					   
+							if (e == null || e._embedded == null || e._embedded.info == null)
+							{
+								return;
+							}
+					   
+							var infoes = e._embedded.info;
+							var $lines = "";
+							
+							for (var i = 0; i < infoes.length; i++)
+							{
+								$lines += "<li>" + infoes[i].titulo + " <a class='delete btn btn-danger' href="+ infoes[i]._links.info.href +">Deletar</a>";
+							}
+							
+							$("#noticias").html($lines);
+					   }
+					});	
+				};
+				
+				fetchInfos();
 				
 			});	
 		
