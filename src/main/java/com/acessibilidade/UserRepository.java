@@ -13,5 +13,5 @@ import com.acessibilidade.User;
 @RepositoryRestResource(collectionResourceRel = "user", path = "users")
 public interface UserRepository extends PagingAndSortingRepository<User, Long> {
 
-	
+	List<User> findByUsername(@Param("username") String username);
 }
