@@ -6,10 +6,10 @@ import java.util.List;
 import org.springframework.data.repository.PagingAndSortingRepository; 
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import com.acessibilidade.User;
+import com.acessibilidade.Ouch;
  
-@RepositoryRestResource(collectionResourceRel = "user", path = "users")
-public interface UserRepository extends PagingAndSortingRepository<User, Long> {
+@RepositoryRestResource(collectionResourceRel = "ouch", path = "ouchs")
+public interface OuchRepository extends PagingAndSortingRepository<Ouch, Long> {
 
 	
 }
