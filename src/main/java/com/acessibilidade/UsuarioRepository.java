@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.acessibilidade.Usuario;
  
-@RepositoryRestResource(collectionResourceRel = "ouch", path = "ouchs")
+@RepositoryRestResource(collectionResourceRel = "usuario", path = "usuarios")
 public interface UsuarioRepository extends PagingAndSortingRepository<Usuario, Long> {
 
 	
