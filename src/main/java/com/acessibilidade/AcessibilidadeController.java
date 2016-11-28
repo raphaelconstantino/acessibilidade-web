@@ -13,7 +13,14 @@ public class AcessibilidadeController {
         model.addAttribute("name", name);
         return "index";
     }
-	
+	listaInfos
+
+    @RequestMapping("/listaInfos")
+    public String listaInfos(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "listaInfos";
+    }
+    
 	@RequestMapping("/admin")
     public String admin(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);

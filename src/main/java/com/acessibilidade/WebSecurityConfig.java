@@ -16,7 +16,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http
             .authorizeRequests()
-                .antMatchers("/admin", "/addInfo").authenticated()
+                .antMatchers("/admin", "/addInfo", "/listaInfos").authenticated()
                 .and()
             .formLogin()
                 .loginPage("/login")

@@ -21,106 +21,22 @@
 		</style>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 		<script src="scripts.js"></script>
-		<script>
 		
-			$(document).ready(function() {
-				
-
-				$("#noticias").on("click", "a", function(e) {
-					e.preventDefault();
-					var href = $(this).attr("href");
-					$.ajax({
-					   url : href,
-					   type: 'DELETE',
-					   success : function () {
-							$("#msg").removeClass("hide");
-							fetchInfos();
-					   }
-					});
-				});
-				
-				function fetchInfos () {
-					$.ajax({
-					   url : "/infoes",
-					   type: 'GET',
-					   success : function (e) {
-					   
-							if (e == null || e._embedded == null || e._embedded.info == null)
-							{
-								return;
-							}
-					   
-							var infoes = e._embedded.info;
-							var $lines = "";
-							
-							for (var i = 0; i < infoes.length; i++)
-							{
-								$lines += "<li>" + decodeURI(infoes[i].titulo) + " <a class='delete btn btn-danger' href="+ infoes[i]._links.info.href +">Deletar</a>";
-							}
-							
-							$("#noticias").html($lines);
-					   }
-					});	
-				};
-				
-				fetchInfos();
-				
-			});	
-		
-		</script>
 	</head>
 	
 	<body>
 	
 		<h1>wAcessibilidade<span>.com</span></h1>
 	
-		<nav class="navbar navbar-inverse">
-		
-			<div class="container-fluid">
-	
-				<div class="col-md-9">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-					</div>
-					
-					<div class="collapse navbar-collapse" id="myNavbar">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="/admin">Gerenciar Noticias</a></li>
-						</ul>
-					</div>
-				</div>
-				
-				<div class="col-md-3" style="text-align : right;">
-					<span th:inline="text">Bem Vindo: <strong>[[${#httpServletRequest.remoteUser}]]</strong></span>
-					<form th:action="@{/logout}" method="post" style="display : inline;">
-						<input type="submit" value="Sign Out" class="btn btn-link"/>
-					</form>
-				</div>	
-				
-			</div>
-		
-		</nav>
+		<nav th:include="fragments/menu-topo-adm" class="navbar navbar-inverse"></nav>
 		
 		<div class="container-fluid">
 			
-			<div class="collapse navbar-collapse" id="myInnerNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="/admin">Lista Noticias</a></li>
-					<li class="active"><a href="/addInfo">Adicionar Noticia</a></li>
-				</ul>
-			</div>
-			
-			<div id="msg" class="hide alert alert-info">
-				Noticia removida com sucesso!
-			</div>
-			
-			<ul id="noticias">
-				
-			</ul>
+			<h2>Área Administrativa!</h2>
+
+			<p> 
+				<span th:inline="text">Bem Vindo: <strong>[[${#httpServletRequest.remoteUser}]]</strong></span>, nesta área você pode Gerenciar Noticias, Usuarios
+			</p>	
 			
 		</div>
 		
