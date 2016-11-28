@@ -13,7 +13,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-		
+		http
+			.headers()
+			.addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN));
+			
 		http
             .authorizeRequests()
                 .antMatchers("/admin", "/addInfo").authenticated()
