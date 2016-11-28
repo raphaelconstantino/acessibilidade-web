@@ -10,11 +10,10 @@ public class User {
  
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long userid;
+    private long id;
 
     private String username;
     private String password;
-    private Integer enabled;
     private String email;
  
     public String getUsername() {
@@ -31,14 +30,6 @@ public class User {
  
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Integer getEnabled() {
-        return enabled;
-    }
- 
-    public void setEnabled(Integer enabled) {
-        this.enabled = enabled;
     }
  
     public String getEmail() {
