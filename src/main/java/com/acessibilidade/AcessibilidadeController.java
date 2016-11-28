@@ -21,6 +21,18 @@ public class AcessibilidadeController {
         return "listaInfos";
     }
 
+    @RequestMapping("/listaUsers")
+    public String listaUsers(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "listaUsers";
+    }
+
+    @RequestMapping("/addUser")
+    public String addUser(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        return "add-user";
+    }
+
 	@RequestMapping("/admin")
     public String admin(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
