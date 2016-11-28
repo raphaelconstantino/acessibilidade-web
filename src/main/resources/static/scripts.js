@@ -12,6 +12,8 @@ $(document).ready(function() {
 		$menuTop.find(".infos").addClass("active");		
 	} else if (path == "/contato") {
 		$menuTop.find(".contato").addClass("active");		
+	} else if (path == "/listaInfos" || path == "/addInfo") {
+		$menuTop.find(".infos").addClass("active");		
 	}
 	
 });
