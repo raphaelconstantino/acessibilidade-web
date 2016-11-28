@@ -23,10 +23,6 @@ public class User {
     public void setId(Long id) {
           this.id = id;
     }
-
-    public String getNome() {
-          return nome;
-    }
  
     public String getUsername() {
         return username;
