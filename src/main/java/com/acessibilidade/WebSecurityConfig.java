@@ -14,7 +14,7 @@ import com.acessibilidade.Usuario;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements RowMapper {
     
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -40,7 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         
         String sql = "SELECT * FROM usuario";
 
-        List<Map> rows = jdbcTemplate.queryForList(sql);
+        List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
 
 
         for (Map row : rows) {
