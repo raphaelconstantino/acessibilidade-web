@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         
-        String sql = "SELECT * FROM usuarios";
+        String sql = "SELECT * FROM usuario";
 
         List<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);
 
