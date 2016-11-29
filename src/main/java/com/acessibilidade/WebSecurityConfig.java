@@ -14,7 +14,7 @@ import com.acessibilidade.Usuario;
 
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter implements RowMapper {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Autowired
     JdbcTemplate jdbcTemplate;
