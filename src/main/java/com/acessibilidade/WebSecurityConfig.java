@@ -1,6 +1,6 @@
 package com.acessibilidade;
 
-import java.util.List;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -38,10 +38,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         
-        List<java.util.Map<String, Usuario>> users = jdbcTemplate.queryForList("SELECT * FROM usuarios");
+        String sql = "SELECT * FROM usuarios";
 
-        auth
-            .inMemoryAuthentication()
-                .withUser("user").password("123456").roles("USER");
+        List<Usuario> usuarios = new ArrayList<Usuario>();
+
+        List<Map> rows = jdbcTemplate.queryForList(sql);
+
+
+        for (Map row : rows) {
+            
+            auth
+                .inMemoryAuthentication()
+                .withUser((String)row.get("nome")).password((String)row.get("senha")).roles("USER");
+
+        }
+
+       
     }
 }
